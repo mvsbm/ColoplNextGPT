@@ -20,7 +20,7 @@ export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
     temperature: 0.3, // increase temepreature to get more creative answers
     modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
-    max_tokens: 2000, // Set the desired max token limit
+    max_tokens: 4000, // Set the desired max token limit
   });
 
   const chain = ConversationalRetrievalQAChain.fromLLM(
