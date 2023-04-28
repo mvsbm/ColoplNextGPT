@@ -1,9 +1,9 @@
 {
-  "name": "gpt4-langchain-pdf-chatbot",
-  "version": "0.1.0",
+  "name": "ColoplNextGPT",
+  "version": "0.1.2",
   "private": true,
   "license": "MIT",
-  "author": "Mayooear<twitter:@mayowaoshin>",
+  "author": "MarvinMa<sungbinma@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "next dev",
