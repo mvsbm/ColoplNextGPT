@@ -7,7 +7,7 @@ import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '@/config/pinecone';
 import { DirectoryLoader } from 'langchain/document_loaders/fs/directory';
 
 /* Name of directory to retrieve your files from */
-const filePath = '/Users/s-ma/PycharmProjects/ColoplNextGPT/docs/';
+const filePath = '/home/marvin/Desktop/ColoplNextGPT/ColoplNextGPT/docs';
 
 export const run = async () => {
   try {
@@ -21,7 +21,7 @@ export const run = async () => {
 
     /* Split text into chunks */
     const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 2000,
+      chunkSize: 1500,
       chunkOverlap: 200,
     });
 

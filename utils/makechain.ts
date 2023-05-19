@@ -2,25 +2,25 @@ import { OpenAI } from 'langchain/llms/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { ConversationalRetrievalQAChain } from 'langchain/chains';
 
-const CONDENSE_PROMPT = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
+const CONDENSE_PROMPT = `Given the earnings call details and the following questions, rephrase the questions to be standalone questions.
 
-Chat History:
-{chat_history}
+Earnings Call Details:
+{earnings_call_details}
 Follow Up Input: {question}
 Standalone question:`;
 
-const QA_PROMPT = `PDF Analyzer for ColoplNext
+const QA_PROMPT = `Earnings Call Analyzer for [COMPANY_NAME]
 
 {context}
 
 Question: {question}
-Helpful answer in markdown:`;
+Analyst Note in markdown:`;
 
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new OpenAI({
     temperature: 0, // increase temepreature to get more creative answers
-    modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
-    max_tokens: 4096, // Set the desired max token limit
+    modelName: 'gpt-4', //change this to gpt-4 if you have access
+    max_tokens: 8192, // Set the desired max token limit
   });
 
   const chain = ConversationalRetrievalQAChain.fromLLM(
